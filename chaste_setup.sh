@@ -2,7 +2,7 @@
 
 # This script installs Chaste
 # Important: if using WSL2, must have a wsl.config file in Windows user directory
-# assigning at least 4gb of memory. This is needed for Chaste to successfully compile!
+# assigning at least 4GB of memory. This is needed for Chaste to successfully compile!
 
 set -e  # Exit on error
 
@@ -64,3 +64,5 @@ ctest -j4 -L Continuous
 # Once tests are done, revert to general output directory
 export CHASTE_TEST_OUTPUT=~/Chaste/output
 echo "CHASTE_TEST_OUTPUT reset to $CHASTE_TEST_OUTPUT"
+
+echo "Congratulations! You have just installed Chaste!"
