@@ -5,10 +5,7 @@
 # assigning at least 4GB of memory. This is needed for Chaste to successfully compile!
 
 set -e  # Exit on error
-
-# Ask for sudo upfront and keep-alive
-sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+cd ~
 
 # Install dependencies
 echo "Updating package lists and installing dependencies..."
@@ -25,9 +22,9 @@ sudo apt install chaste-dependencies
 # Create directories
 echo "Creating directory structure"
 mkdir Chaste
-mkdir build
-mkdir output
-mkdir output/unit_tests
+mkdir Chaste/build
+mkdir Chaste/output
+mkdir Chaste/output/unit_tests
 
 # Set Chaste output directory
 EXPORT_LINE='export CHASTE_TEST_OUTPUT=~/Chaste/output'
